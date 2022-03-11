@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1.3 console & debugger</title>
+</head>
+
+<body>
+  <script>
+    // Simple log
+    console.log("Hello world");
+    // Start group
+    console.group("logs")
+    // Fancy ✨
+    console.log("%cHello there", "color:blue;font-size:3rem");
+    // Error
+    console.error("Something bad happened...");
+    // Info
+    console.info("Something interesting!");
+    // End group
+    console.groupEnd("logs")
+
+    // Stop execution
+    debugger;
+
+    const persons = [
+      { name: "Jean", age: 30 },
+      { name: "Roger", age: 16 }
+    ]
+    // Table
+    console.table(persons)
+  </script>
+</body>
+
+</html>

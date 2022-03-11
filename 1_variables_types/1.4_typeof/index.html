@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1.4 typeof</title>
+</head>
+
+<body>
+  <script>
+    let myString = "Hello 👋"
+    console.log('typeof myString', typeof myString) // 'string'
+    let myNumber = 9.1
+    console.log('typeof myNumber', typeof myNumber) // 'number'
+    let myInteger = 42
+    console.log('typeof myInteger', typeof myInteger) // 'number'
+    let myBoolean = true
+    console.log('typeof myBoolean', typeof myBoolean) // 'boolean'
+    let myArray = []
+    console.log('typeof myArray', typeof myArray) // 'object'
+    let myObject = {}
+    console.log('typeof myObject', typeof myObject) // 'object'
+    let nullValue = null;
+    console.log('typeof nullValue', typeof nullValue) // 'object'
+    let undefinedValue;
+    console.log('typeof undefinedValue', typeof undefinedValue) // 'undefined'
+    let NaNValue = 3 / 'foo';
+    console.log('typeof NaNValue', typeof NaNValue) // 'number'
+  </script>
+</body>
+
+</html>
