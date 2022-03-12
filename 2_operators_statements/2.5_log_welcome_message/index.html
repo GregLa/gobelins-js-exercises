@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2.5 log welcome message</title>
+</head>
+
+<body>
+  <script>
+    const firstName = "Grégoire";
+    const lastName = "Lagoutte";
+    const description = "j’aime les fruits au sirop et le skate en moonboots.";
+
+    const hello = (fName, lName, desc) => {
+      desc = desc.charAt(0).toUpperCase() + desc.slice(1);
+
+      if (desc.length > 10) {
+        desc = desc.slice(0, 10) + "...";
+      }
+
+      return `Bienvenue ${fName} ${lName.toUpperCase()} \n${desc}`
+    }
+
+
+    console.log(hello(firstName, lastName, description));
+  </script>
+</body>
+
+</html>
