@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3.1 increment decrement</title>
+</head>
+
+<body>
+  <script>
+    const increment = nb => ++nb;
+    const decrement = nb => --nb;
+
+    function oldSchoolIncrement(nb) {
+      return nb += 1;
+    }
+
+    function oldSchoolDecrement(nb) {
+      return nb -= 1;
+    }
+
+    let value = 5;
+    console.log("Inital value : ", value) // 5
+    console.log("Decremented value", decrement(value)) // 4
+    console.log("Incremented value", increment(value)) // 6
+  </script>
+</body>
+
+</html>

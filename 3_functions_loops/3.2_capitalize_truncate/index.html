@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3.2 capitalize truncate</title>
+</head>
+
+<body>
+  <script>
+    const truncate = (str, maxLength = 20) => {
+      if (str.length > maxLength) {
+        str = str.slice(0, maxLength) + "..."
+      }
+      return str;
+    }
+
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+    const sing = "CHAUFFEUR, SI T'ES CHAMPION"
+    console.log(truncate(capitalize(sing))) // "Chauffeur, si t'es c..."
+    console.log(truncate(capitalize(sing), 50)) // "Chauffeur, si t'es champion"
+  </script>
+</body>
+
+</html>
