@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4.1 concat</title>
+</head>
+
+<body>
+  <script>
+    // V1 - 😨
+    const concatV1 = (arr1, arr2) => {
+      const appendPosition = arr1.length;
+      for (let i = 0; i < arr2.length; i++) {
+        arr1[appendPosition + i] = arr2[i];
+      }
+      return arr1;
+    }
+
+    const numbsV1 = [1, 2];
+    const lettersV1 = ["a", "b"];
+    const concatArrV1 = concatV1(numbsV1, lettersV1);
+
+    console.info("V1 concatArr", concatArrV1); // [1, 2, "a", "b"]
+    console.info("V1 numbs", numbsV1); // [1, 2, "a", "b"], OUPS!
+    console.info("V1 letters", lettersV1); // ["a", "b"]
+
+    // V2 - 🤨
+    const concatV2 = (arr1, arr2) => {
+      // Internal function  
+      const append = (a1, a2) => {
+        const appendPosition = a1.length;
+        for (let i = 0; i < a2.length; i++) {
+          a1[appendPosition + i] = a2[i];
+        }
+        return a1;
+      }
+
+      let concatArr = [];
+      append(concatArr, arr1);
+      append(concatArr, arr2);
+      return concatArr;
+    }
+
+    const numbsV2 = [1, 2];
+    const lettersV2 = ["a", "b"];
+    const concatArrV2 = concatV2(numbsV2, lettersV2);
+
+    console.info("V2 concatArr", concatArrV2); // [1, 2, "a", "b"]
+    console.info("V2 numbs", numbsV2); // [1, 2] Mieux !
+    console.info("V2 letters", lettersV2); // ["a", "b"]
+
+    // V3 - 🤯
+    const concat = (...arrays) => {
+      // Internal function  
+      const append = (a1, a2) => {
+        const appendPosition = a1.length;
+        for (let i = 0; i < a2.length; i++) {
+          a1[appendPosition + i] = a2[i];
+        }
+        return a1;
+      }
+
+      let concatArr = []
+      if (arrays.length) {
+        for (let j = 0; j < arrays.length; j++) {
+          append(concatArr, arrays[j]);
+        }
+      }
+      return concatArr;
+    }
+
+    const numbs = [1, 2];
+    const letters = ["a", "b"];
+    const symbols = ["😁", "🥳"];
+    const concatArr = concat(numbs, letters, symbols);
+
+    console.info("V3 concatArr", concatArr); // [1, 2, "a", "b", "😁", "🥳"]
+    console.info("V3 numbs", numbs); // [1, 2]
+    console.info("V3 letters", letters); // ["a", "b"]
+    console.info("V3 symbols", symbols); // ["😁", "🥳"]
+
+  </script>
+</body>
+
+</html>

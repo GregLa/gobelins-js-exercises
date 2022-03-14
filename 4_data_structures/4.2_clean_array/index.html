@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4.2 clean array</title>
+</head>
+
+<body>
+  <script>
+    const pow2 = [1, 2, 4, 8, 12, 16, 32, 64];
+
+    // Remove unwanted value
+    const unwantedIndex = pow2.indexOf(12);
+    pow2.splice(unwantedIndex, 1);
+    // Add new value
+    const lastValue = pow2[pow2.length - 1];
+    pow2.push(lastValue * 2);
+
+    console.log(pow2) // [1, 2, 4, 8, 16, 32, 64, 128]
+  </script>
+</body>
+
+</html>

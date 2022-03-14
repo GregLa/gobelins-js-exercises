@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4.3 car object</title>
+</head>
+
+<body>
+  <script>
+    const car = {
+      manufacturer: 'Ford',
+      model: 'Mustang',
+      year: 1969,
+      start() { console.log("Vroum") },
+      seats: ["", "", "", ""],
+      get occupiedSeats() {
+        return this.seats.join(", ")
+      },
+      set occupiedSeats(persons) {
+        if (Array.isArray(persons)) {
+          if (persons.length <= 4) {
+            const nbPersons = persons.length;
+            persons.length = 4;
+            this.seats = persons.fill("", nbPersons);
+          } else {
+            console.error("Too many people !");
+          }
+        } else {
+          console.error("Not an array !");
+        }
+      }
+    };
+
+  </script>
+</body>
+
+</html>

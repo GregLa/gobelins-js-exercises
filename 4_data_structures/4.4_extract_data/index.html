@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>4.4 extract data</title>
+</head>
+
+<body>
+  <script>
+    const starWarsMoviesRating = [
+      { name: "The Rise of Skywalker", rating: 52 },
+      { name: "The Last Jedi", rating: 91 },
+      { name: "The Force Awakens", rating: 93 },
+      { name: "Revenge of the Sith", rating: 80 },
+      { name: "Attack of the Clones", rating: 65 },
+      { name: "The Phantom Menace", rating: 52 },
+      { name: "Return of the Jedi", rating: 82 },
+      { name: "The Empire Strikes Back", rating: 94 },
+      { name: "A New Hope", rating: 92 }
+    ]
+
+    const names = starWarsMoviesRating.map(m => m.name);
+    const attackOfTheClonesRating = starWarsMoviesRating.find(m => m.name === "Attack of the Clones").rating;
+    const goodMovies = starWarsMoviesRating.filter(m => m.rating > 80);
+    const averageRating = Math.floor(starWarsMoviesRating.reduce((acc, m) => acc + m.rating, 0) / starWarsMoviesRating.length);
+    const top3 = starWarsMoviesRating.sort((a, b) => a.rating - b.rating).reverse().slice(0, 3);
+
+    console.log("Names :", names);
+    console.log("Attack of the clones rating :", attackOfTheClonesRating);
+    console.log("Movie rating greater than 80% :", goodMovies);
+    console.log("Average movies rating :", averageRating);
+    console.log("Top 3 Star Wars movies :", top3);
+  </script>
+</body>
+
+</html>
