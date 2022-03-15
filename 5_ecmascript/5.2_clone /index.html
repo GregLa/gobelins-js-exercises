@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5.2 clone</title>
+</head>
+
+<body>
+  <script>
+    const clone = (val) => {
+      if (Array.isArray(val)) {
+        return [...val]
+      } else if (typeof val === 'object' && val !== null) {
+        return { ...val }
+      }
+      // Primitive type
+      return val
+    }
+
+    const user = { name: "James Doe", location: "New York" };
+    const animals = ["cats", "dogs"];
+
+    const userClone = clone(user);
+    const animalsClone = clone(animals);
+
+    user.name = "Bruce Banner";
+    animals.push("turtles");
+
+    console.log(userClone, user, user === userClone);
+    console.log(animalsClone, animals, animals === animalsClone);
+
+  </script>
+</body>
+
+</html>
