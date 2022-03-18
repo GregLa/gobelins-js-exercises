@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>7.1 form manipulation</title>
+</head>
+
+<body>
+  <form>
+    <div class="row">
+      <label for="name">Avatar name :</label>
+      <input type="text" name="name" id="name" required pattern="[a-z0-9]{5,10}" />
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+    <div class="row">
+      <label for="age">Age :</label>
+      <input type="number" name="age" id="age" min="7" max="77" required />
+    </div>
+    <div>
+      <label for="weapon">Preferred Weapon</label>
+      <select name="weapon" id="weapon" required>
+        <option value="🪀">Yoyo 🪀</option>
+        <option value="🥏">Frisbee 🥏</option>
+        <option value="📎">Paper clip 📎</option>
+      </select>
+    </div>
+    <div class="row">
+      <span>Race : </span>
+      <input type="radio" name="race" value="elf 🧝‍♂️🧝‍♀️" id="elf" required /><label for="elf">Elf 🧝‍♂️🧝‍♀️</label>
+      <input type="radio" name="race" value="vampire 🧛‍♂️🧛‍♀️" id="vampire" /><label for="violet">Vampire
+        🧛‍♂️🧛‍♀️</label>
+      <input type="radio" name="race" value="zombie 🧟‍♂️🧟" id="zombie" /><label for="violet">Zombie 🧟‍♂️🧟</label>
+    </div>
+    <div class="row">
+      <span>Skills :</span>
+      <input type="checkbox" name="skills" value="heal 👨‍⚕️👩‍⚕️" id="heal" /><label for="heal">Heal 👨‍⚕️👩‍⚕️</label>
+      <input type="checkbox" name="skills" value="cast spells 🧙‍♀️🧙‍♂️" id="spells" /><label for="spells">Cast spells
+        🧙‍♀️🧙‍♂️</label>
+      <input type="checkbox" name="skills" value="cook 🍖🥦" id="cook" /><label for="cook">Cook 🍖🥦</label>
+      <input type="checkbox" name="skills" value="ride ants 🐜" id="ride" /><label for="ride">Ride ants 🐜</label>
+    </div>
+    <div>
+      <button id="submit">Create avatar !</button>
+    </div>
+    <div id="message"></div>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html>
