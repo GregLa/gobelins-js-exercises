@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10.1 todo light</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <input type="text" v-model="text" :placeholder="placeholder" @keyup.enter="addTodos" />
+    <h3>To be done : </h3>
+    <ul>
+      <todo-item v-for="item in toBeComplete" :todo="item" :key="item.id" @pasteque="item.done = true" />
+    </ul>
+    <h3>Completed : </h3>
+    <ul>
+      <todo-item v-for="item in completed" :todo="item" :key="item.id" @pasteque="item.done = false" />
+    </ul>
+    <button @click="clearDones">Clear dones</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
